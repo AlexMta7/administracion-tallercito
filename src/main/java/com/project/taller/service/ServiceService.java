@@ -29,4 +29,8 @@ public class ServiceService {
     public void deleteService(Long id) {
         serviceRepository.deleteById(id);
     }
+
+    public ServiceModel getService(Long id) {
+        return serviceRepository.findById(id).orElse(null);
+    }
 }

@@ -1,6 +1,7 @@
 package com.project.taller.controller.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -47,5 +48,11 @@ public class EmployeeController {
     public String deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
         return "OK";
+    }
+
+    // Obtiene un dato por ID
+    @GetMapping("/{id}")
+    public EmployeeModel getEmployee(@PathVariable Long id) {
+        return employeeService.getEmployee(id);
     }
 }

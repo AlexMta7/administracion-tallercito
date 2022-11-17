@@ -57,4 +57,10 @@ public class ServiceController {
         serviceService.deleteService(id);
         return "OK";
     }
+
+    // Busca elemento por ID
+    @GetMapping("/{id}")
+    public ServiceModel getService(@PathVariable Long id) {
+        return serviceService.getService(id);
+    }
 }
