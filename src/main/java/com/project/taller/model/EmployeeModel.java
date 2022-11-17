@@ -17,5 +17,5 @@ public class EmployeeModel {
     private String type;
     private String dui;
     private String email;
-    private String cod_empl;
+    private String cod_employ;
 }
