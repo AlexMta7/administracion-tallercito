@@ -15,11 +15,15 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    // Agregar un nuevo cliente a la Base de Datos
+    // Agrega un nuevo cliente a la Base de Datos
     @RequestMapping(value = "/api/client", method = RequestMethod.POST)
     public String saveClient(@RequestBody ClientModel c){
-        clientService.saveClient(c);
-        return "OK";
+        try {
+            clientService.saveClient(c);
+            return "OK";
+        }catch (Exception e){
+            return "FAIL";
+        }
     }
 
     // Listar todos los clientes existentes
