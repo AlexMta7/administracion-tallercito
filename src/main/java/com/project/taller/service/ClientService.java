@@ -15,26 +15,16 @@ public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-    public String saveClient(ClientModel c) {
-        try {
-            clientRepository.save(c);
-            return "OK";
-        }catch (Exception e){
-            return "FAIL: " + e;
-        }
+    public ClientModel saveClient(ClientModel c) {
+            return clientRepository.save(c);
     }
 
     public List<ClientModel> getClients() {
         return clientRepository.findAll();
     }
 
-    public String deleteClient(Long id) {
-        try {
-            clientRepository.deleteById(id);
-            return "OK";
-        }catch (Exception e){
-         return "FAIL: " + e;
-        }
+    public void deleteClient(Long id) {
+        clientRepository.deleteById(id);
     }
 
     public ClientModel getClientById(Long id) {

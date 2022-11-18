@@ -14,26 +14,17 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-    public String saveCar(CarModel ca) {
-        try {
-            carRepository.save(ca);
-            return "OK";
-        }catch (Exception e){
-            return "FAIL: " + e;
-        }
+    public CarModel saveCar(CarModel ca) {
+        return carRepository.save(ca);
+
     }
 
     public List<CarModel> getCars() {
         return carRepository.findAll();
     }
 
-    public String deleteCar(Long id) {
-        try {
-            carRepository.deleteById(id);
-            return "OK";
-        }catch (Exception e){
-            return "FAIL: " + e;
-        }
+    public void deleteCar(Long id) {
+        carRepository.deleteById(id);
     }
 
     public CarModel getCarById(Long id) {
