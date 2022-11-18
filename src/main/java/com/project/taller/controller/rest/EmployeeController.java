@@ -26,33 +26,54 @@ public class EmployeeController {
     // * Create
     @PostMapping()
     public String addEmployee(@RequestBody EmployeeModel employee) {
-        employeeService.addEmployee(employee);
-        return "OK";
+        try{
+            employeeService.addEmployee(employee);
+            return "OK";
+        }
+        catch(){
+            return "FAIL";
+        }
     }
 
     // * Read
     @GetMapping()
     public List<EmployeeModel> getEmployees() {
-        return employeeService.getEmployees();
+        try {
+            return employeeService.getEmployees();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     // * Update
     @PutMapping()
     public String updateEmployee(@RequestBody EmployeeModel employee) {
-        employeeService.updateEmployee(employee);
-        return "OK";
+        try {
+            employeeService.updateEmployee(employee);
+            return "OK";
+        } catch (Exception e) {
+            return "FAIL";
+        }
     }
 
     // * Delete
     @DeleteMapping("/{id}")
     public String deleteEmployee(@PathVariable Long id) {
-        employeeService.deleteEmployee(id);
-        return "OK";
+        try {
+            employeeService.deleteEmployee(id);
+            return "OK";
+        } catch (Exception e) {
+            return "FAIL";
+        }
     }
 
     // Obtiene un dato por ID
     @GetMapping("/{id}")
     public EmployeeModel getEmployee(@PathVariable Long id) {
-        return employeeService.getEmployee(id);
+        try {
+            return employeeService.getEmployee(id);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
