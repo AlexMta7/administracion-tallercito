@@ -8,4 +8,5 @@ import com.project.taller.model.ClientModel;
 @Repository
 public interface ClientRepository extends JpaRepository<ClientModel, Long> {
 
+    ClientModel findByDui(String dui);
 }
