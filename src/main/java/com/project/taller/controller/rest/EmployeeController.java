@@ -26,11 +26,10 @@ public class EmployeeController {
     // * Create
     @PostMapping()
     public String addEmployee(@RequestBody EmployeeModel employee) {
-        try{
+        try {
             employeeService.addEmployee(employee);
             return "OK";
-        }
-        catch(){
+        } catch (Exception e) {
             return "FAIL";
         }
     }
