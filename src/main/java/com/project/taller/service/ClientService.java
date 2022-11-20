@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import com.project.taller.repository.ClientRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -16,7 +15,7 @@ public class ClientService {
     private ClientRepository clientRepository;
 
     public ClientModel saveClient(ClientModel c) {
-            return clientRepository.save(c);
+        return clientRepository.save(c);
     }
 
     public List<ClientModel> getClients() {
