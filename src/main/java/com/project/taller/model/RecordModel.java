@@ -17,4 +17,5 @@ public class RecordModel {
     private Long id_service;
     private String date;
     private String note;
+    private String status;
 }
