@@ -13,5 +13,5 @@ import java.util.List;
 public interface CarRepository extends JpaRepository<CarModel, Long> {
 
     @Query(value = "SELECT * FROM cars WHERE id_client = :id", nativeQuery = true)
-    List<CarModel> getCarsByIdCient(@Param("id") Long id);
+    List<CarModel> getCarsByIdClient(@Param("id") Long id);
 }
