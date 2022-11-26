@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import com.project.taller.service.ClientService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class ClientController {
@@ -17,18 +16,18 @@ public class ClientController {
 
     // Agrega un nuevo cliente a la Base de Datos
     @RequestMapping(value = "/api/client", method = RequestMethod.POST)
-    public String saveClient(@RequestBody ClientModel c){
+    public String saveClient(@RequestBody ClientModel c) {
         try {
             clientService.saveClient(c);
             return "OK";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "FAIL";
         }
     }
 
     // Listar todos los clientes existentes
     @RequestMapping(value = "/api/clients", method = RequestMethod.GET)
-    public List<ClientModel> getClients(){
+    public List<ClientModel> getClients() {
         return clientService.getClients();
     }
 
@@ -45,24 +44,24 @@ public class ClientController {
 
     // Borrar un cliente por medio del id asignado
     @RequestMapping(value = "/api/client/{id}", method = RequestMethod.DELETE)
-    public String deleteClient(@PathVariable Long id){
+    public String deleteClient(@PathVariable Long id) {
         try {
             clientService.deleteClient(id);
             return "OK";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "FAIL: " + e;
         }
     }
 
     // Busqueda de cliente por medio del ID
     @RequestMapping(value = "/api/client/{id}", method = RequestMethod.GET)
-    public ClientModel getClientById(@PathVariable Long id){
+    public ClientModel getClientById(@PathVariable Long id) {
         return clientService.getClientById(id);
     }
 
     // Busqueda de cliente por medio de DUI
     @RequestMapping(value = "/api/clients/{dui}", method = RequestMethod.GET)
-    public ClientModel getClientByDui(@PathVariable String dui){
+    public ClientModel getClientByDui(@PathVariable String dui) {
         return clientService.getClientByDui(dui);
     }
 

@@ -31,8 +31,8 @@ public class CarService {
         return carRepository.findById(id).orElse(null);
     }
 
-    public List<CarModel> getCarsByIdCient(Long id) {
-        return carRepository.getCarsByIdCient(id);
+    public List<CarModel> getCarsByIdClient(Long id) {
+        return carRepository.getCarsByIdClient(id);
     }
 
     public CarModel updateCar(CarModel ca) {
