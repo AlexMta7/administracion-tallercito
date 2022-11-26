@@ -33,6 +33,17 @@ public class CarController {
         return carService.getCars();
     }
 
+    // Modificar un automovil de la Base de Datos
+    @RequestMapping(value = "/api/car", method = RequestMethod.PUT)
+    public String updateCar(@RequestBody CarModel ca){
+        try {
+            carService.updateCar(ca);
+            return "OK";
+        }catch (Exception e){
+            return "FAIL";
+        }
+    }
+
     // Borrar un automovil por medio del id asignado
     @RequestMapping(value = "/api/car/{id}", method = RequestMethod.DELETE)
     public String deleteCar(@PathVariable Long id){

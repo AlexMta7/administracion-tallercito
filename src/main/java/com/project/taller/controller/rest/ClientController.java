@@ -32,6 +32,17 @@ public class ClientController {
         return clientService.getClients();
     }
 
+    // modifica datos de un cliente existente en la base
+    @RequestMapping(value = "/api/client", method = RequestMethod.PUT)
+    public String updateClient(@RequestBody ClientModel c){
+        try {
+            clientService.updateClient(c);
+            return "OK";
+        }catch (Exception e){
+            return "FAIL";
+        }
+    }
+
     // Borrar un cliente por medio del id asignado
     @RequestMapping(value = "/api/client/{id}", method = RequestMethod.DELETE)
     public String deleteClient(@PathVariable Long id){

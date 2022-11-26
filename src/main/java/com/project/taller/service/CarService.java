@@ -34,4 +34,8 @@ public class CarService {
     public List<CarModel> getCarsByIdCient(Long id) {
         return carRepository.getCarsByIdCient(id);
     }
+
+    public CarModel updateCar(CarModel ca) {
+        return carRepository.save(ca);
+    }
 }

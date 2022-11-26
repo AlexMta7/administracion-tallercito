@@ -34,4 +34,8 @@ public class ClientService {
     public ClientModel getClientByDui(String dui) {
         return clientRepository.findByDui(dui);
     }
+
+    public ClientModel updateClient(ClientModel c) {
+        return clientRepository.save(c);
+    }
 }
