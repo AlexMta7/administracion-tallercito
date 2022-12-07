@@ -9,6 +9,7 @@ import com.project.taller.service.ClientService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = { "http://localhost:3000" })
 public class ClientController {
 
     @Autowired
