@@ -10,6 +10,7 @@ import com.project.taller.service.EmployeeService;
 
 @RestController
 @RequestMapping(value = "/api/employees")
+@CrossOrigin(origins = { "http://localhost:3000" })
 public class EmployeeController {
 
     @Autowired
