@@ -44,14 +44,14 @@ public class CarController {
     }
 
     // Busqueda de automovil por medio del ID
-    @RequestMapping(value = "/api/car/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.GET)
     public CarModel getCarById(@PathVariable Long id) {
         return carService.getCarById(id);
     }
 
-    // Busqueda de automovil por medio del ID del Cliente
-    @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.GET)
-    public List<CarModel> getCarsByIdClient(@PathVariable Long id) {
-        return carService.getCarsByIdCient(id);
-    }
+    // // Busqueda de automovil por medio del ID del Cliente
+    // @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.GET)
+    // public List<CarModel> getCarsByIdClient(@PathVariable Long id) {
+    // return carService.getCarsByIdCient(id);
+    // }
 }
