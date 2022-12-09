@@ -34,11 +34,11 @@ public class ClientController {
 
     // modifica datos de un cliente existente en la base
     @RequestMapping(value = "/api/clients", method = RequestMethod.PUT)
-    public String updateClient(@RequestBody ClientModel c){
+    public String updateClient(@RequestBody ClientModel c) {
         try {
             clientService.updateClient(c);
             return "OK";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "FAIL";
         }
     }
@@ -60,10 +60,10 @@ public class ClientController {
         return clientService.getClientById(id);
     }
 
-    // Busqueda de cliente por medio de DUI
-    @RequestMapping(value = "/api/clients/{dui}", method = RequestMethod.GET)
-    public ClientModel getClientByDui(@PathVariable String dui) {
-        return clientService.getClientByDui(dui);
-    }
+    // // Busqueda de cliente por medio de DUI
+    // @RequestMapping(value = "/api/clients/{dui}", method = RequestMethod.GET)
+    // public ClientModel getClientByDui(@PathVariable String dui) {
+    // return clientService.getClientByDui(dui);
+    // }
 
 }
