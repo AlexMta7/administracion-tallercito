@@ -33,7 +33,7 @@ public class ClientController {
     }
 
     // modifica datos de un cliente existente en la base
-    @RequestMapping(value = "/api/client", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/clients", method = RequestMethod.PUT)
     public String updateClient(@RequestBody ClientModel c){
         try {
             clientService.updateClient(c);

@@ -33,7 +33,7 @@ public class CarController {
     }
 
     // Modificar un automovil de la Base de Datos
-    @RequestMapping(value = "/api/car", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/cars", method = RequestMethod.PUT)
     public String updateCar(@RequestBody CarModel ca){
         try {
             carService.updateCar(ca);
