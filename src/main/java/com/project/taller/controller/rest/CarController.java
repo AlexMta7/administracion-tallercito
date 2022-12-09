@@ -16,7 +16,7 @@ public class CarController {
     private CarService carService;
 
     // Agrega un nuevo automovil a la Base de Datos
-    @RequestMapping(value = "/api/car", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/cars", method = RequestMethod.POST)
     public String saveCar(@RequestBody CarModel ca) {
         try {
             carService.saveCar(ca);
