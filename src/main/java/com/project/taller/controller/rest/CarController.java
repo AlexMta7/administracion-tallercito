@@ -33,7 +33,7 @@ public class CarController {
     }
 
     // Borrar un automovil por medio del id asignado
-    @RequestMapping(value = "/api/car/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.DELETE)
     public String deleteCar(@PathVariable Long id) {
         try {
             carService.deleteCar(id);
