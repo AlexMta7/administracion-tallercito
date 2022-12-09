@@ -16,7 +16,7 @@ public class CarController {
     private CarService carService;
 
     // Agrega un nuevo automovil a la Base de Datos
-    @RequestMapping(value = "/api/car", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/cars", method = RequestMethod.POST)
     public String saveCar(@RequestBody CarModel ca) {
         try {
             carService.saveCar(ca);
@@ -44,7 +44,7 @@ public class CarController {
     }
 
     // Borrar un automovil por medio del id asignado
-    @RequestMapping(value = "/api/car/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.DELETE)
     public String deleteCar(@PathVariable Long id) {
         try {
             carService.deleteCar(id);
@@ -55,14 +55,14 @@ public class CarController {
     }
 
     // Busqueda de automovil por medio del ID
-    @RequestMapping(value = "/api/car/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.GET)
     public CarModel getCarById(@PathVariable Long id) {
         return carService.getCarById(id);
     }
 
-    // Busqueda de automovil por medio del ID del Cliente
-    @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.GET)
-    public List<CarModel> getCarsByIdClient(@PathVariable Long id) {
-        return carService.getCarsByIdClient(id);
-    }
+    // // Busqueda de automovil por medio del ID del Cliente
+    // @RequestMapping(value = "/api/cars/{id}", method = RequestMethod.GET)
+    // public List<CarModel> getCarsByIdClient(@PathVariable Long id) {
+    // return carService.getCarsByIdCient(id);
+    // }
 }
